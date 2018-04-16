@@ -1,0 +1,4 @@
+function Airport() {
+   this.hangar = [];
+}
+

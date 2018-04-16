@@ -1,6 +1,9 @@
 describe('AirPlane', function(){
   var plane = new AirPlane();
-  it('should fail', function(){
-    expect(plane.isInFlight()).toBeFalsey;
+
+  describe('plane.isInFlight', function() {
+    it('should be false', function(){
+      expect(plane.isInFlight()).toBeFalsey;
+    });
   });
 });
