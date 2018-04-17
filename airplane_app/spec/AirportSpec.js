@@ -1,4 +1,4 @@
-describe('AirPort', function() {
+describe('Airport', function() {
   var heathrow = new Airport();
 
   describe('plane', function() {
