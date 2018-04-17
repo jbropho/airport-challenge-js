@@ -10,4 +10,8 @@ Airport.prototype.setWeather = function(condition){
 
 Airport.prototype.add_plane = function(plane) {
   this.hangar.push(plane);
-}
+};
+
+Airport.prototype.remove_plane = function() {
+  this.hangar.pop();
+};

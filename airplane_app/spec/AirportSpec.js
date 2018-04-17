@@ -14,4 +14,11 @@ describe('Airport', function() {
        expect(gatwick.hangar.length).toEqual(1);
     });
   });
+
+  describe('remove_plane', function() {
+    it('should remove a plane from the hangar', function() {
+      gatwick.remove_plane();
+      expect(gatwick.hangar.length).toEqual(0);
+    });
+  });
 });
