@@ -4,12 +4,13 @@ function Airport() {
    this.weather = 'sunny';
 }
 
-Airport.prototype.setWeather = function(condition){
-  this.weather = condition;
+Airport.prototype.getWeather = function(){
+  return this.weather;
 };
 
 Airport.prototype.add_plane = function(plane) {
   if(this.isFull()) throw new Error('airport is full');
+  if(this.getWeather() === 'stormy') throw new Error('weather unsuitable for landing')
   this.hangar.push(plane);
 };
 
