@@ -1,11 +1,8 @@
 describe('Airport', function() {
-  var heathrow = new Airport();
   var gatwick = new Airport();
 
-  describe('hangar', function() {
-    it('should have an empty hangar by default', function(){
-      expect(heathrow.hangar.length).toEqual(0);
-    });
+  beforeEach(function(){
+    gatwick.hangar = [];
   });
 
   describe('add_plane', function() {
@@ -15,8 +12,18 @@ describe('Airport', function() {
     });
   });
 
+  describe('add_plane', function() {
+    it('should raise an error when adding to full hangar', function(){
+      gatwick.add_plane('plane');
+      expect(function() {
+        gatwick.add_plane('plane2');
+      }).toThrowError('airport is full');
+    }); 
+ });
+
   describe('remove_plane', function() {
     it('should remove a plane from the hangar', function() {
+      gatwick.add_plane('plane');
       gatwick.remove_plane();
       expect(gatwick.hangar.length).toEqual(0);
     });
