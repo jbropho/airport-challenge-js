@@ -7,3 +7,7 @@ function Airport() {
 Airport.prototype.setWeather = function(condition){
   this.weather = condition;
 };
+
+Airport.prototype.add_plane = function(plane) {
+  this.hangar.push(plane);
+}
